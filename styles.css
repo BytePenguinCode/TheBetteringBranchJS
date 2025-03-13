@@ -100,15 +100,19 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-size: 100vw;
+    background-size: 100.0vw;
     background-position: 0% 50%;
     color: #ffffff;
-    line-height: 3em;
+    line-height: 3.0em;
     border-bottom-left-radius: 32px;
     border-bottom-right-radius: 32px;
     margin: auto;
-    height: clamp(0pc, 20pc, 50vw);
+    height: clamp(0.0pc, 20.0pc, 50.0vw);
     width: clamp(0%, 70pc, 100%);
+
+    h1 {
+      font-size: clamp(0.0px, 48pt, 12.0vw);
+    }
 }
 
 .Event-photo-section {
@@ -121,18 +125,6 @@ h2 {
     }
 
     .Activity-heading {
-        font-size: 16pt;
-        text-align: left;
-        line-height: 1.75em;
-        padding: 8px 16px;
-        width: fit-content;
-        background-color: var(--white);
-        color: var(--green-d);
-        border-bottom: 4px solid var(--green-l);
-        border-radius: 8px;
-    }
-
-    .Activity-dropdown {
         background-color: var(--white);
         color: var(--green-d);
         font-size: 16pt;
