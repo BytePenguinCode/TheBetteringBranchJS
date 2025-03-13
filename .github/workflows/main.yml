@@ -31,7 +31,7 @@ jobs:
         run: |
           cd destination
           echo "[LOG] Adding source remote repository"
-          git remote add source https://${{ secrets.GH_PAT }}@github.com/BytePenguinCode/TheBetteringBranch.git
+          git remote add source https://${{ secrets.GH_PAT }}@github.com/BytePenguinCode/TheBetteringBranchJS.git
           echo "[LOG] Fetching changes from source repository"
           git fetch source  # Fetch the latest changes from source repo
 
@@ -47,14 +47,14 @@ jobs:
       - name: Checkout Source Repository
         uses: actions/checkout@v4
         with:
-          repository: "BytePenguinCode/TheBetteringBranch"
+          repository: "BytePenguinCode/TheBetteringBranchJS"
           token: ${{ secrets.GH_PAT }}
           path: temp  # Clone into a temporary folder
 
       # Copy files from the source repository into the destination repo directory
       - name: Copy Files from Source Repo to Destination Repo
         run: |
-          echo "[LOG] Copying files from BytePenguinCode/TheBetteringBranch"
+          echo "[LOG] Copying files from BytePenguinCode/TheBetteringBranchJS"
           cp -r temp/* destination/  # Copy all files from source repo to destination folder
 
       # Debug Git Status (optional)
@@ -78,7 +78,7 @@ jobs:
           fi
 
           echo "[LOG] Committing new files"
-          git commit -m "Sync new files from BytePenguinCode/TheBetteringBranch"
+          git commit -m "Sync new files from BytePenguinCode/TheBetteringBranchJS"
           echo "[LOG] Pushing changes to granwyntan/TheBetteringBranch"
 
           # Push the changes to the destination repository
