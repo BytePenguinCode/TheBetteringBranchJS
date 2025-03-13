@@ -58,7 +58,7 @@ h2 {
 
 .Keep-center-narrow {
     margin: auto;
-    width: clamp(0pc, 70pc, 80vw);
+    width: clamp(0.0px, 70pc, 80vw);
 }
 
 .Flexbox {
@@ -113,8 +113,8 @@ h2 {
     border-bottom-left-radius: 32px;
     border-bottom-right-radius: 32px;
     margin: auto;
-    height: clamp(0.0pc, 20.0pc, 50.0vw);
-    width: clamp(0%, 70pc, 100%);
+    height: clamp(0.0px, 20.0pc, 50.0vw);
+    width: clamp(0.0px, 70pc, 100%);
 
     h1 {
       font-size: clamp(0.0px, 48pt, 12.0vw);
