@@ -29,12 +29,6 @@ body {
     font-family: "Nunito", sans-serif;
 }
 
-.Page {
-    flex: 1; /* Pushes the footer to the bottom */
-    display: flex;
-    flex-direction: column;
-}
-
 h1 {
     font-size: 48pt;
     text-align: center;
@@ -55,6 +49,11 @@ h2 {
     line-height: 1.75em;
     text-align: left;
     padding-bottom: 6pc;
+
+    /* Pushes the footer to the bottom */
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
 }
 
 .Keep-center-narrow {
@@ -75,6 +74,7 @@ h2 {
 .Colour-special-panel {
     background-color: var(--green-m);
     color: #ffffff;
+    font-size: 20pt;
     padding-left: 8px;
     padding-right: 8px;
     padding-top: 12px;
@@ -133,13 +133,16 @@ h2 {
     .Activity-heading {
         background-color: var(--white);
         color: var(--green-d);
-        font-size: 16pt;
+        font-size: 20pt;
         text-align: left;
         line-height: 1.75em;
         padding: 8px 16px;
-        width: fit-content;
         border-bottom: 4px solid var(--green-l);
         border-radius: 8px;
+
+        /* This is the worst thing I've ever had to deal with */
+        /* white-space: nowrap;
+        width: fit-content; */
     }
 }
 
@@ -241,7 +244,7 @@ h2 {
         right: 0px;
         top: 100px;
         background: #5c895b;
-        width: 300px;
+        width: 100%;
         text-align: center;
     }
     .nav-links a {
