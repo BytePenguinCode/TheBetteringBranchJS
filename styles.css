@@ -1,10 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
-
-/* Remove or comment out any other font imports if present */
-/* @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Nunito:wght@400;600&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Nunito:wght@400;600&display=swap");
 
 :root {
-    /* Colour palette remains unchanged */
+    /* Colour palette */
     --black: #000000;
     --green-dd: #043003;
     --green-d: #265b25;
@@ -29,13 +26,7 @@ body {
     display: flex;
     flex-direction: column;
     padding-top: 80px;
-    font-family: "Bebas Neue", sans-serif;
-}
-
-/* Update heading elements to use Bebas Neue as well */
-h1,
-h2 {
-    font-family: "Bebas Neue", sans-serif;
+    font-family: "Nunito", sans-serif;
 }
 
 .Page {
@@ -48,13 +39,13 @@ h1 {
     font-size: 48pt;
     text-align: center;
     padding-top: 2rem;
-    font-family: "Playfair Display", serif;
+    font-family: "Bebas Neue", serif;
 }
 
 h2 {
     text-align: center;
     padding-top: 2rem;
-    font-family: "Playfair Display", serif;
+    font-family: "Bebas Neue", serif;
 }
 
 .Page {
@@ -81,14 +72,21 @@ h2 {
     flex-wrap: wrap;
     justify-content: center;
 }
-
+.Colour-special-panel {
+    background-color: var(--green-m);
+    color: #ffffff;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    width: fit-content;
+    border-radius: 8px;
+}
 .Colour-panel {
     background-color: var(--green-m);
     color: #ffffff;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 12px;
+    padding-bottom: 12px;
     width: fit-content;
     border-radius: 8px;
 }
@@ -198,22 +196,27 @@ h2 {
 }
 
 .nav-links {
-    opacity: 0;
-    transform: translateY(-20px);
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    opacity: 1;
+    transform: none;
+    transition: none;
+}
+
+.nav-links a {
+    color: #ffffff;
+    font-size: 18pt; /* increased from 16pt */
+    font-weight: 400; /* slightly less heavy than 'bold' */
+    text-decoration: none;
+    padding: 0 1rem;
+    font-family: "Bebas Neue", serif;
+}
+
+.nav-links a:hover {
+    color: #e6edbe;
 }
 
 .nav-links.show {
     opacity: 1;
     transform: translateY(0);
-}
-
-.nav-links a {
-    color: #ffffff;
-    font-size: 16pt;
-    font-weight: bold;
-    text-decoration: none;
-    padding: 0 1rem;
 }
 
 .hamburger {
