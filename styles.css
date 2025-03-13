@@ -113,6 +113,12 @@ h2 {
     h1 {
       font-size: clamp(0.0px, 48pt, 12.0vw);
     }
+
+    img {
+        max-height: 90%;
+        width: 70%;
+        object-fit: contain;
+    }
 }
 
 .Event-photo-section {
