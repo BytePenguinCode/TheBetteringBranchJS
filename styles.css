@@ -81,6 +81,9 @@ h2 {
     padding-bottom: 12px;
     width: fit-content;
     border-radius: 8px;
+    
+    white-space: nowrap;
+    overflow-wrap: break-word;
 }
 .Colour-panel {
     background-color: var(--green-m);
@@ -89,6 +92,9 @@ h2 {
     padding-bottom: 12px;
     width: fit-content;
     border-radius: 8px;
+    
+    white-space: nowrap;
+    overflow-wrap: break-word;
 }
 
 .Empty-row {
@@ -134,15 +140,14 @@ h2 {
         background-color: var(--white);
         color: var(--green-d);
         font-size: 20pt;
-        text-align: left;
         line-height: 1.75em;
         padding: 8px 16px;
         border-bottom: 4px solid var(--green-l);
         border-radius: 8px;
 
-        /* This is the worst thing I've ever had to deal with */
-        /* white-space: nowrap;
-        width: fit-content; */
+        white-space: nowrap;
+        overflow-wrap: break-word;
+        width: fit-content;
     }
 }
 
@@ -233,7 +238,7 @@ h2 {
     cursor: pointer;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1000px) {
     .hamburger {
         display: block;
     }
@@ -287,7 +292,7 @@ h2 {
     padding: 10px 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     .footer-bottom {
         flex-direction: column;
         align-items: flex-start;
