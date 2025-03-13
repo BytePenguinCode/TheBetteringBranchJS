@@ -8,18 +8,19 @@
 <body class="Page Global">
 
   <!-- NAVBAR (identical to index.html for consistent site navigation) -->
-  <nav style="box-sizing: border-box; width: 100%; background: #5c895b; height: 100px; display: flex; justify-content: space-between; padding: 0 5vw; z-index: 12;">
-    <div style="display: flex; align-items: center; margin-right: -24px;">
-      <img src="images/logos/text_white.png" alt="The Bettering Branch Text Logo" height="80" />
-      <img src="images/logos/no_text_transparent.png" alt="The Bettering Branch Logo" height="80" />
-      <a href="index.html"
-         style="color: #ffffff; font-size: 16pt; font-weight: bold; text-decoration: none; padding: 0 2rem; height: 100%; display: flex; align-items: center;">
-         ABOUT
-      </a>
-      <a href="what-we-do.html"
-         style="color: #ffffff; font-size: 16pt; font-weight: bold; text-decoration: none; padding: 0 2rem; height: 100%; display: flex; align-items: center;">
-         WHAT WE DO
-      </a>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logos">
+        <img src="images/logos/text_white.png" alt="The Bettering Branch Text Logo" class="nav-logo">
+        <img src="images/logos/no_text_transparent.png" alt="The Bettering Branch Logo" class="nav-logo">
+      </div>
+
+      <button class="hamburger" id="hamburger">☰</button>
+
+      <div class="nav-links" id="nav-links">
+        <a href="index.html">ABOUT</a>
+        <a href="what-we-do.html">WHAT WE DO</a>
+      </div>
     </div>
   </nav>
 
