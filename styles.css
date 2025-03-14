@@ -238,37 +238,13 @@ h2 {
     color: #ffffff;
     cursor: pointer;
 }
-
-@media (max-width: 1000px) {
-    .hamburger {
-        display: block;
-    }
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        right: 0px;
-        top: 100px;
-        background: #5c895b;
-        width: 100%;
-        text-align: center;
-    }
-    .nav-links a {
-        display: block;
-        padding: 15px;
-    }
-    .nav-links.show {
-        display: flex;
-    }
-}
-
 /* FOOTER */
 
 .footer {
     background: #5c895b;
     color: #c4ebbf;
     text-align: center;
-    padding: 20px 40px; /* 20px top & bottom, 30px left & right */
+    padding: 20px 40px;
     margin-top: 4pc;
     max-width: 100vw; /* Ensure footer doesn't exceed viewport width */
     position: relative;
@@ -293,14 +269,157 @@ h2 {
     padding: 10px 0;
 }
 
-@media (max-width: 1000px) {
+/* HOME MAIN PANEL background */
+.Home-main-panel {
+    background-image: url("images/event_photos/intro_photo_0.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+/* Ensure Colour-panel elements take full width */
+.Colour-panel {
+    width: 100%;
+}
+
+/* Style for introductory images */
+.intro-img {
+    height: 20pc;
+    width: 100%;
+    border-radius: 32px;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    /* Ensure overall width and prevent horizontal scroll */
+    html,
+    body {
+        width: 100vw;
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Navbar: Keep a consistent height with appropriate padding */
+    .navbar {
+        height: auto;
+        padding: 10px 20px;
+    }
+
+    /* Nav container: Keep the original row layout */
+    .nav-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    /* Logos: Keep their default size */
+    .nav-logos {
+        display: flex;
+        align-items: center;
+    }
+
+    /* Hamburger: Show and position on the right */
+    .hamburger {
+        display: block;
+        font-size: 36px;
+        background: none;
+        border: none;
+        color: #ffffff;
+        cursor: pointer;
+    }
+
+    /* Nav links container: Hidden by default, positioned below the navbar */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: calc(100% + 5px);
+        left: 0;
+        width: 100%;
+        background: #5c895b;
+        padding: 10px 0;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Nav links items: Make them larger and centered */
+    .nav-links a {
+        font-size: 18pt;
+        padding: 12px 0;
+        margin: 5px 0;
+        text-align: center;
+    }
+
+    /* When nav is toggled */
+    .nav-links.show {
+        display: flex;
+    }
+
+    /* Container adjustments for readability */
+    .Keep-center-narrow {
+        width: 90%;
+        margin: 0 auto;
+        padding: 20px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    /* Typography adjustments */
+    h1 {
+        font-size: 28pt;
+        margin-bottom: 10px;
+    }
+    h2 {
+        font-size: 24pt;
+        margin-bottom: 10px;
+    }
+    h3,
+    .Activity-heading,
+    .Colour-special-panel {
+        font-size: 20pt;
+        margin-bottom: 8px;
+    }
+    p,
+    li {
+        font-size: 16pt;
+        line-height: 1.5;
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    /* Responsive images */
+    img {
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto 15px;
+        display: block;
+    }
+
+    /* Flexbox adjustments for grouped images */
+    .Flexbox-centered,
+    .Partner-image-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .Flexbox-centered img,
+    .Partner-image-container img {
+        margin: 5px;
+    }
+
+    /* Footer adjustments */
+    .footer {
+        padding: 20px;
+        text-align: center;
+    }
     .footer-bottom {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        margin-top: 10px;
     }
-    .footer-bottom span + span {
-        width: 100%;
-        margin-top: 5px;
-        text-align: center;
+    .footer-bottom span {
+        margin: 5px 0;
+        display: block;
     }
 }
