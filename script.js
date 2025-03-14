@@ -1,57 +1,43 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Hamburger Menu Toggle
   const hamburger = document.getElementById("hamburger");
   const navLinks = document.getElementById("nav-links");
 
-  // ✅ FIXED: Hamburger Menu Toggle with Smooth Slide Effect
   hamburger.addEventListener("click", function () {
+    navLinks.classList.toggle("mobile");
     navLinks.classList.toggle("show");
-    if (navLinks.classList.contains("show")) {
-      navLinks.style.display = "flex"; // Make menu visible
-      setTimeout(() => {
-        navLinks.style.opacity = "1";
-        navLinks.style.transform = "translateY(0)";
-      }, 10);
-    } else {
-      navLinks.style.opacity = "0";
-      navLinks.style.transform = "translateY(-20px)";
-      setTimeout(() => {
-        navLinks.style.display = "none"; // Hide after animation
-      }, 300);
-    }
+	hamburger.classList.toggle("open"); // Ensure it toggles into a cross (✖)
   });
 
-  // ✅ Button Animations (Scaling on Hover)
-  const buttons = document.querySelectorAll("button, .nav-links a");
-  buttons.forEach(button => {
-    button.addEventListener("mouseover", () => {
-      button.style.transform = "scale(1.1)";
-      button.style.transition = "transform 0.3s ease-in-out";
-    });
+  // Carousel Functionality
+  const carouselItems = document.querySelectorAll(".carousel-item");
+  let currentIndex = 0;
+  const totalItems = carouselItems.length;
+  const prevButton = document.getElementById("prev");
+  const nextButton = document.getElementById("next");
 
-    button.addEventListener("mouseleave", () => {
-      button.style.transform = "scale(1)";
+  function showSlide(index) {
+    carouselItems.forEach((item, i) => {
+      item.classList.remove("active");
+      if (i === index) {
+        item.classList.add("active");
+      }
     });
+  }
+
+  prevButton.addEventListener("click", function () {
+    currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+    showSlide(currentIndex);
   });
 
-  // ✅ Page Load Animation
-  document.body.style.opacity = "0";
-  document.body.style.transition = "opacity 1s ease-in-out";
-  setTimeout(() => {
-    document.body.style.opacity = "1";
-  }, 200);
-
-
-
-  // ✅ Image Click Animations (Scale + Rotate)
-  const images = document.querySelectorAll("img");
-  images.forEach(img => {
-    img.style.transition = "transform 0.3s ease-in-out";
-    
-    img.addEventListener("click", () => {
-      img.style.transform = "scale(1.1) rotate(2deg)";
-      setTimeout(() => {
-        img.style.transform = "scale(1) rotate(0)";
-      }, 300);
-    });
+  nextButton.addEventListener("click", function () {
+    currentIndex = (currentIndex + 1) % totalItems;
+    showSlide(currentIndex);
   });
+
+  // Auto-slide every 5 seconds
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % totalItems;
+    showSlide(currentIndex);
+  }, 5000);
 });
