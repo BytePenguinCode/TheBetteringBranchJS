@@ -144,8 +144,6 @@ body {
     top: 0;
 }
 
-
-
 /* Site Header */
 .site-header {
     margin-top: 80px;
@@ -417,7 +415,9 @@ body {
 }
 
 .image-grid.two-columns img {
-    height: 250px; /* Set a fixed height for consistency */
+    height: auto;
+    min-height: 400px; /* Set a fixed height for consistency */
+    max-height: 500px;
 }
 
 /* Three Columns */
@@ -425,8 +425,9 @@ body {
     grid-template-columns: repeat(3, 1fr);
 }
 
-.image-grid.two-columns img {
-    height: 400px; /* Set a fixed height for consistency */
+.image-grid.three-columns img {
+    height: auto;
+    min-height: 250px; /* Set a fixed height for consistency */
 }
 
 /* Partner Groups */
@@ -667,6 +668,16 @@ body {
         justify-content: center;
         justify-items: center;
         width: 100%;
+    }
+
+    .image-grid.two-columns, .image-grid.three-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .image-grid.two-columns img, .image-grid.three-columns img {
+        height: auto;
+        min-height: unset;
+        max-height: unset;
     }
 }
 
