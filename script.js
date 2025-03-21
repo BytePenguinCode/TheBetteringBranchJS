@@ -41,3 +41,44 @@ document.addEventListener("DOMContentLoaded", function () {
     showSlide(currentIndex);
   }, 5000);
 });
+
+// Sparkle madness
+function createSparklesFor(element) {
+  setInterval(() => {
+    const sparkle = document.createElement('div');
+    sparkle.classList.add('sparkle');
+
+    // Random position within the element
+    sparkle.style.left = Math.random() * 100 + '%';
+    sparkle.style.top = Math.random() * 100 + '%';
+
+    // Random delay offset so they're not synced
+    sparkle.style.animationDelay = `${Math.random() * 2}s`;
+
+    element.appendChild(sparkle);
+
+    // Remove after animation
+    setTimeout(() => {
+      sparkle.remove();
+    }, 1500);
+  }, 200); // New sparkle every 200ms
+}
+
+// Attach to all .top-winner cards
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.top-winner').forEach((card) => {
+    createSparklesFor(card);
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const items = document.querySelectorAll(".home-m-item");
+  let current = 0;
+  const max = items.length;
+
+  setInterval(() => {
+    items[current].classList.remove("active");
+    current = (current + 1) % max;
+    items[current].classList.add("active");
+  }, 3000); // change every 3 seconds
+});
