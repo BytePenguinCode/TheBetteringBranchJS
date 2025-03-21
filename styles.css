@@ -192,7 +192,6 @@ body {
     font-size: 1.25rem;
     color: var(--white);
 }
-
 /* Carousel Section */
 .carousel-section {
     margin: 2rem auto;
@@ -271,6 +270,22 @@ body {
     right: 1rem;
 }
 
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+    /* Adjust carousel height on mobile */
+    .carousel {
+        height: 300px; /* Adjust as needed */
+    }
+
+    /* Ensure the images do not stretch excessively */
+    .carousel-item img {
+        object-fit: fill; /* Cover ensures the image fills the container */
+        width: 100%;
+        aspect-ratio: 1/1;
+        height: 100%;
+    }
+}
+
 /* Content Sections */
 .content {
     max-width: 1200px;
@@ -280,7 +295,7 @@ body {
 
 .content-section {
     background-color: var(--white);
-    padding: 2rem;
+    padding: 1.5rem 2rem;
     border-radius: 16px;
     margin-bottom: 1rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -313,6 +328,7 @@ body {
     padding: 0.5rem 1rem;
     border-radius: 8px;
     margin-bottom: 1rem;
+    margin-top: 0.5rem;
     max-width: 100%; /* Ensure it doesn’t overflow */
     white-space: normal; /* Allow text to wrap */
     box-sizing: border-box; /* Include padding in width calculation */
@@ -794,7 +810,7 @@ body {
 }
 
 .home-m-item.active {
-    opacity: 1;
+    opacity: 0.45;
     z-index: 2;
 }
 
