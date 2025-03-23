@@ -112,65 +112,6 @@ body {
     color: var(--green-ll);
 }
 
-/* Ensure the hamburger is always visible on mobile */
-.hamburger {
-    display: block; /* Ensure it's visible */
-    background: none;
-    border: none;
-    cursor: pointer;
-    width: 40px; /* Adjust width */
-    height: 40px; /* Adjust height */
-    position: relative;
-    z-index: 1100; /* Ensure it's on top */
-}
-
-/* Hamburger icon: three lines */
-.hamburger-icon {
-    width: 30px;
-    height: 3px;
-    background-color: var(--white);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: all 0.3s ease;
-}
-
-.hamburger-icon::before,
-.hamburger-icon::after {
-    content: "";
-    width: 30px;
-    height: 3px;
-    background-color: var(--white);
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    transition: all 0.3s ease;
-}
-
-.hamburger-icon::before {
-    top: -8px;
-}
-
-.hamburger-icon::after {
-    top: 8px;
-}
-
-/* Change to a cross (✖) when the menu is open */
-.hamburger.open .hamburger-icon {
-    background-color: transparent; /* Hide middle bar */
-}
-
-.hamburger.open .hamburger-icon::before {
-    transform: translateX(-50%) rotate(45deg);
-    top: 0;
-}
-
-.hamburger.open .hamburger-icon::after {
-    transform: translateX(-50%) rotate(-45deg);
-    top: 0;
-}
-
 /* Site Header */
 .site-header {
     margin-top: 80px;
@@ -557,63 +498,50 @@ body {
     color: var(--green-ll);
 }
 
-/* HAMBURGER */
+/* Hamburger Menu Button */
 .hamburger {
-    display: block; /* Always visible on mobile; hidden with media query later */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Evenly spaces the bars */
+    align-items: center; /* Centers bars horizontally */
+    width: 40px; /* Width of the button */
+    height: 40px; /* Height for even spacing */
+    padding: 0;
     background: none;
     border: none;
     cursor: pointer;
-    width: 40px;
-    height: 40px;
     position: relative;
-    z-index: 1100;
-    align-self: end;
 }
 
-.hamburger-icon {
-    width: 30px;
-    height: 3px;
-    background-color: var(--white);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: all 0.3s ease;
+/* Individual Bars */
+.bar {
+    width: 100%;
+    height: 5px; /* Thickness of the bars */
+    background-color: white; /* Color of bars */
+    border-radius: 3px; /* Rounded corners for a smoother look */
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.hamburger-icon::before,
-.hamburger-icon::after {
-    content: "";
-    width: 30px;
-    height: 3px;
-    background-color: var(--white);
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    transition: all 0.3s ease;
+/* Space Between Bars */
+.hamburger .bar:nth-child(1) {
+    margin-bottom: 8px; /* Space between first and second bars */
 }
 
-.hamburger-icon::before {
-    top: -8px;
+.hamburger .bar:nth-child(2) {
+    margin-bottom: 8px; /* Space between second and third bars */
 }
 
-.hamburger-icon::after {
-    top: 8px;
+/* Hamburger Menu Transition (When Open) */
+.hamburger.open .bar:nth-child(1) {
+    transform: translateY(13px) rotate(45deg); /* Moves and rotates the first bar */
 }
 
-/* Hamburger open state (transform to cross) */
-.hamburger.open .hamburger-icon {
-    background-color: transparent;
+.hamburger.open .bar:nth-child(2) {
+    opacity: 0; /* Hides the middle bar */
 }
 
-.hamburger.open .hamburger-icon::before {
-    transform: translateX(-50%) rotate(45deg);
-    top: 0;
-}
-
-.hamburger.open .hamburger-icon::after {
-    transform: translateX(-50%) rotate(-45deg);
-    top: 0;
+.hamburger.open .bar:nth-child(3) {
+    transform: translateY(-13px) rotate(-45deg); /* Moves and rotates the third bar */
 }
 
 /* Hide hamburger on larger screens */
